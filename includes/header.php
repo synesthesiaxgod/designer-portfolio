@@ -82,7 +82,10 @@ require_once __DIR__ . '/functions.php';
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
-                            <a class="nav-link" href="profile.php">Личный кабинет</a>
+                            <a class="nav-link" href="dashboard.php">Личный кабинет</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light btn-sm ms-2" href="logout.php">Выйти</a>
                         </li>
                     <?php else: ?>
                         <li class="nav-item">
@@ -104,7 +107,7 @@ require_once __DIR__ . '/functions.php';
     ?>
     <div class="container mt-3">
         <div class="alert alert-<?php echo htmlspecialchars($flashMessage['type']); ?> alert-dismissible fade show" role="alert">
-            <?php echo htmlspecialchars($flashMessage['message']); ?>
+            <?php echo htmlspecialchars($flashMessage['text']); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
