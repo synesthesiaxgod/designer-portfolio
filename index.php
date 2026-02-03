@@ -61,7 +61,7 @@ $recentPortfolio = $stmt->fetchAll();
         <div class="mt-4">
             <a href="portfolio.php" class="btn btn-light btn-lg me-2">Смотреть портфолио</a>
             <?php if (isLoggedIn()): ?>
-                <a href="admin/create-order.php" class="btn btn-outline-light btn-lg">Оформить заказ</a>
+                <a href="create-order.php" class="btn btn-outline-light btn-lg">Оформить заказ</a>
             <?php else: ?>
                 <a href="login.php" class="btn btn-outline-light btn-lg">Оформить заказ</a>
             <?php endif; ?>

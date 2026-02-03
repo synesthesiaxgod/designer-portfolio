@@ -50,7 +50,7 @@ foreach ($allServices as $service) {
                                 ?>
                             </p>
                             <?php if (isLoggedIn()): ?>
-                                <a href="admin/create-order.php?service_id=<?php echo $service['id']; ?>" class="btn btn-primary">Заказать</a>
+                                <a href="create-order.php?service_id=<?php echo $service['id']; ?>" class="btn btn-primary">Заказать</a>
                             <?php else: ?>
                                 <a href="login.php" class="btn btn-primary">Заказать</a>
                             <?php endif; ?>

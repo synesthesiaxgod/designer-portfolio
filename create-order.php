@@ -11,6 +11,9 @@ $userId = getUserId();
 $errors = [];
 $success = false;
 
+// Получаем предвыбранную услугу из параметра
+$preSelectedServiceId = $_GET['service_id'] ?? null;
+
 // Получаем список активных услуг
 $stmt = $pdo->query("SELECT * FROM services WHERE is_active = 1 ORDER BY sort_order, title");
 $services = $stmt->fetchAll();
@@ -119,8 +122,16 @@ include 'includes/header.php';
                             <select class="form-select" id="service_id" name="service_id">
                                 <option value="">Выберите услугу (необязательно)</option>
                                 <?php foreach ($services as $service): ?>
+                                    <?php
+                                    $isSelected = false;
+                                    if (isset($_POST['service_id'])) {
+                                        $isSelected = $_POST['service_id'] == $service['id'];
+                                    } elseif ($preSelectedServiceId) {
+                                        $isSelected = $preSelectedServiceId == $service['id'];
+                                    }
+                                    ?>
                                     <option value="<?php echo $service['id']; ?>" 
-                                        <?php echo (isset($_POST['service_id']) && $_POST['service_id'] == $service['id']) ? 'selected' : ''; ?>>
+                                        <?php echo $isSelected ? 'selected' : ''; ?>>
                                         <?php echo e($service['title']); ?>
                                         <?php if ($service['price_from']): ?>
                                             - от <?php echo formatPrice($service['price_from']); ?>
