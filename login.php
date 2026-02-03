@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if ($result['success']) {
             // Определяем куда перенаправлять
-            if (!empty($redirect)) {
+            if (!empty($redirect) && $redirect[0] === '/' && strpos($redirect, '://') === false) {
+                // Разрешаем только внутренние пути
                 $redirectUrl = $redirect;
             } else {
                 $redirectUrl = $result['role'] === 'admin' ? '/admin/index.php' : '/dashboard.php';
