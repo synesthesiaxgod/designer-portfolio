@@ -1,0 +1,326 @@
+/**
+ * Основные стили для сайта портфолио дизайнера
+ */
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #64748b;
+    --accent-color: #f59e0b;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --light-gray: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Навигация */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Кнопки */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #4f46e5;
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Карточки */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+/* Hero секция */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 100%);
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></svg>');
+    background-size: 40px 40px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Портфолио */
+.portfolio-filters {
+    margin-bottom: 2rem;
+}
+
+.portfolio-filter-btn {
+    margin: 0.25rem;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--light-gray);
+    background: white;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.portfolio-filter-btn:hover,
+.portfolio-filter-btn.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.portfolio-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+    opacity: 1;
+}
+
+.portfolio-item-overlay h5 {
+    color: white;
+    margin: 0;
+}
+
+/* Услуги */
+.service-card {
+    height: 100%;
+    padding: 2rem;
+}
+
+.service-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 1rem 0;
+}
+
+/* Статистика */
+.stats-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stats-label {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Таблицы */
+.table {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Формы */
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 2px solid var(--light-gray);
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(99, 102, 241, 0.15);
+}
+
+/* Badges */
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: #1e293b;
+    color: #cbd5e1;
+    padding: 3rem 0 1.5rem;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+/* Чат */
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chat-message {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+}
+
+.chat-message.user {
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: 20%;
+}
+
+.chat-message.admin {
+    background-color: var(--light-gray);
+    margin-right: 20%;
+}
+
+.chat-message-time {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.25rem;
+}
+
+/* Placeholder изображения */
+.img-placeholder {
+    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .stats-number {
+        font-size: 2rem;
+    }
+}
+
+/* Утилиты */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.section-subtitle {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
