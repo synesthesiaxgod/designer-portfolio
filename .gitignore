@@ -1,0 +1,17 @@
+# Uploaded files
+uploads/orders/*
+!uploads/orders/.gitkeep
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PHP
+*.log
